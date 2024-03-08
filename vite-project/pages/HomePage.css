@@ -1,0 +1,39 @@
+.home-page {
+    padding: 20px;
+}
+
+.category-list {
+    display: flex;
+    /* Change display to flex */
+    justify-content: center;
+    /* Center the categories horizontally */
+    flex-wrap: wrap;
+    /* Allow categories to wrap to the next line if needed */
+}
+
+.category-block {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: yellow;
+    /* Setting text color to yellow */
+    cursor: pointer;
+    /* Changing cursor to pointer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Adding transition for smooth effect */
+    margin: 10px;
+    /* Add margin to create space between categories */
+}
+
+.category-block:hover {
+    transform: translateY(-5px);
+    /* Applying a translateY transform on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Changing box-shadow on hover */
+}
+
+.category-block h2 {
+    margin: 0;
+}
