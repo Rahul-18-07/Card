@@ -9,13 +9,13 @@ const categories = [
 ];
 
 const HomePage: React.FC = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     return (
         <div className="home-page">
             <h1>Recipe Categories</h1>
             <div className="category-list">
                 {categories.map((category) => (
-                    <div key={category.id} className="category-block"  >
+                    <div key={category.id} className="category-block" onClick={() => navigate(`${category.name}`)} >
                         <h2>{category.name}</h2>
                     </div>
                 ))}

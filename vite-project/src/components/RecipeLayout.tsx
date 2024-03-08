@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import '../App.css'; // Import your CSS file for styling
 import RecipeCard from './RecipeCard';
 
@@ -13,13 +13,12 @@ interface Recipe {
 
 function RecipeLayout() {
   const { searchText } = useParams();
-  console.log(searchText);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
     async function fetchRecipes() {
       try {
-        const response = await fetch(`https://apis-new.foodoscope.com/recipe-search/sub-regions?searchText=Japanese&pageSize=10`, {
+        const response = await fetch(`https://apis-new.foodoscope.com/recipe-search/sub-regions?searchText=${searchText}&pageSize=10`, {
           headers: {
             Authorization: 'Bearer 0iukwZ9CyanPrXFMjVX7LKe8UoazZoZDDIVGFWYJq-7fCvb0',
             accept: 'application/json'
@@ -36,7 +35,7 @@ function RecipeLayout() {
     }
 
     fetchRecipes();
-  }, []);
+  }, [searchText]);
 
   return (
     <div className="grid-container">

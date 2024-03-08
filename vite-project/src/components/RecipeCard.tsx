@@ -21,7 +21,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   onAdd
 }) => {
   // const navigate = useNavigate();
-  console.log(id);
   return (
     <div className="recipe-card" >
       <h2 className="title">{title}</h2>
